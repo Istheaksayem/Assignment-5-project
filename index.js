@@ -1,3 +1,16 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const favCount = document.getElementById("fav-count");
+  const heartIcons = document.querySelectorAll(".fa-heart");
+
+  heartIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+      let current = parseInt(favCount.textContent, 10);
+      favCount.textContent = current + 1;
+    });
+  });
+});
+
+
 // Coin element
 let coins = parseInt(document.querySelector("#coin-count").textContent);
 
