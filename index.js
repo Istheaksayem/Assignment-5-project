@@ -1,22 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const favCount = document.getElementById("fav-count");
   const heartIcons = document.querySelectorAll(".fa-heart");
 
-  heartIcons.forEach(icon => {
-    icon.addEventListener("click", () => {
+  heartIcons.forEach(function (icon) {
+    icon.addEventListener("click", function () {
       let current = parseInt(favCount.textContent, 10);
       favCount.textContent = current + 1;
     });
   });
 });
 
-
 // Coin element
-let coins = parseInt(document.querySelector("#coin-count").textContent);
+let coins = parseInt(document.querySelector("#coin-count").textContent, 10);
 
 // Call buttons
-document.querySelectorAll(".btn.btn-success").forEach(btn => {
-  btn.addEventListener("click", () => {
+document.querySelectorAll(".btn.btn-success").forEach(function (btn) {
+  btn.addEventListener("click", function () {
     const card = btn.closest("div.p-4");
     const serviceName = card.querySelector("h3").textContent;
     const serviceNumber = card.querySelector("span.block").textContent;
@@ -35,7 +34,7 @@ document.querySelectorAll(".btn.btn-success").forEach(btn => {
     const timeString = now.toLocaleTimeString();
 
     // Alert
-    alert(`Calling ${serviceName} (${serviceNumber})...`);
+    alert("Calling " + serviceName + " (" + serviceNumber + ")...");
 
     // Add to call history
     const entry = document.createElement("div");
@@ -52,23 +51,22 @@ document.querySelectorAll(".btn.btn-success").forEach(btn => {
 });
 
 // Clear history button
-document.querySelector("#clear-history").addEventListener("click", () => {
+document.querySelector("#clear-history").addEventListener("click", function () {
   document.querySelector("#history-list").innerHTML = "";
 });
 
 // Copy section
-let copyCount = parseInt(document.querySelector("#copy-count").textContent);
+let copyCount = parseInt(document.querySelector("#copy-count").textContent, 10);
 
-document.querySelectorAll(".btn.btn-neutral.btn-outline").forEach(btn => {
-  btn.addEventListener("click", () => {
+document.querySelectorAll(".btn.btn-neutral.btn-outline").forEach(function (btn) {
+  btn.addEventListener("click", function () {
     const card = btn.closest("div.p-4");
     const number = card.querySelector("span.block").textContent;
 
-    navigator.clipboard.writeText(number).then(() => {
-      alert(`${number} copied to clipboard!`);
+    navigator.clipboard.writeText(number).then(function () {
+      alert(number + " copied to clipboard!");
     });
 
-    // Copy count 
     copyCount++;
     document.querySelector("#copy-count").textContent = copyCount;
   });
