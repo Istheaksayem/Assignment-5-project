@@ -1,4 +1,5 @@
 
+
   // Coin element
   let coins = parseInt(document.querySelector("#coin-count").textContent);
 
