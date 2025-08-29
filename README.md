@@ -11,9 +11,9 @@ querySelectorAll("selector") → সব matching element দেয় NodeList হ�
 
 2. DOM-এ নতুন element তৈরি ও insert করা
 
-const div = document.createElement("div"); // নতুন div তৈরি
-div.textContent = "Hello World";            // content যোগ করা
-document.body.appendChild(div);             // DOM-এ append করা
+const div = document.createElement("div"); 
+div.textContent = "Hello World";
+document.body.appendChild(div);           
 
 
 
