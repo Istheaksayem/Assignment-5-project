@@ -18,6 +18,10 @@
       coins -= 20;
       document.querySelector("#coin-count").textContent = coins;
 
+      
+        const now = new Date();
+    const timeString = now.toLocaleTimeString();
+
       // Alert
       alert(`Calling ${serviceName} (${serviceNumber})...`);
 
@@ -32,11 +36,13 @@
     });
   });
 
+
   // Clear history button
   document.querySelector("#clear-history").addEventListener("click", () => {
     document.querySelector("#history-list").innerHTML = "";
   });
 
+// copy section
 
 
 let copyCount = parseInt(document.querySelector("#copy-count").textContent);
@@ -50,7 +56,7 @@ document.querySelectorAll(".btn.btn-neutral.btn-outline").forEach(btn => {
       alert(`${number} copied to clipboard!`);
     });
 
-    // Copy count বাড়ানো
+    // Copy count 
     copyCount++;
     document.querySelector("#copy-count").textContent = copyCount;
   });
